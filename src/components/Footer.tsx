@@ -30,21 +30,21 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h4 className="font-bold text-lg mb-4">LuxeStore</h4>
+            <h4 className="font-bold text-lg mb-4">s h o p z</h4>
             <p className="text-muted-foreground mb-4">
               The future of intelligent e-commerce. Discover premium products with AI-powered personalization.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" onClick={() => window.open('https://facebook.com', '_blank')}>
                 <Facebook className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" onClick={() => window.open('https://twitter.com', '_blank')}>
                 <Twitter className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" onClick={() => window.open('https://instagram.com', '_blank')}>
                 <Instagram className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" onClick={() => window.open('https://youtube.com', '_blank')}>
                 <Youtube className="h-4 w-4" />
               </Button>
             </div>
@@ -54,24 +54,19 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">About Us</a></li>
               <li><Link to="/new-arrivals" className="hover:text-foreground transition-colors">New Arrivals</Link></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Best Sellers</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Sale</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Gift Cards</a></li>
+              <li><Link to="/categories" className="hover:text-foreground transition-colors">Categories</Link></li>
+              <li><Link to="/brands" className="hover:text-foreground transition-colors">Brands</Link></li>
+              <li><Link to="/sale" className="hover:text-foreground transition-colors">Sale</Link></li>
             </ul>
           </div>
 
           {/* Customer Service */}
           <div>
-            <h4 className="font-bold mb-4">Customer Service</h4>
+            <h4 className="font-bold mb-4">Navigation</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Shipping Info</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Returns & Exchanges</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Size Guide</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Track Your Order</a></li>
+              <li><span className="hover:text-foreground transition-colors cursor-pointer" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>Browse Products</span></li>
+              <li><span className="hover:text-foreground transition-colors cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Back to Top</span></li>
             </ul>
           </div>
 
@@ -110,14 +105,11 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-muted-foreground">
-            © 2024 LuxeStore. All rights reserved.
+            © 2024 s h o p z. All rights reserved.
           </div>
           
           <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-foreground transition-colors">Cookies Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Sustainability</a>
+            <span className="text-muted-foreground">Built with AI-powered innovation</span>
           </div>
         </div>
       </div>
