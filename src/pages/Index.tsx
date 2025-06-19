@@ -8,6 +8,7 @@ import PersonalizedRecommendations from "@/components/PersonalizedRecommendation
 import ShoppingCart from "@/components/ShoppingCart";
 import CustomerDashboard from "@/components/CustomerDashboard";
 import Footer from "@/components/Footer";
+import BrandKitSelector from "@/components/BrandKitSelector";
 
 interface CartItem {
   id: string;
@@ -175,6 +176,12 @@ const Index = () => {
       >
         📊
       </button>
+      
+      {/* Brand Kit Selector */}
+      <BrandKitSelector 
+        currentTheme={currentTheme}
+        onThemeChange={applyTheme}
+      />
     </div>
   );
 };
