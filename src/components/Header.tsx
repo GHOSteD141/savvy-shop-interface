@@ -34,14 +34,14 @@ const Header = ({ cartItems, onCartClick, onThemeChange, currentTheme }: HeaderP
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              shopz
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent tracking-widest">
+              s h o p z
             </h1>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/new-arrivals" className="text-sm font-medium hover:text-primary transition-colors">New Arrivals</Link>
+            <Link to="/new-arrivals" className="text-sm font-medium hover:text-primary transition-colors tracking-wider">N e w   A r r i v a l s</Link>
             <Link to="/categories" className="text-sm font-medium hover:text-primary transition-colors">Categories</Link>
             <Link to="/brands" className="text-sm font-medium hover:text-primary transition-colors">Brands</Link>
             <Link to="/sale" className="text-sm font-medium hover:text-primary transition-colors">Sale</Link>
@@ -131,7 +131,7 @@ const Header = ({ cartItems, onCartClick, onThemeChange, currentTheme }: HeaderP
                 />
               </div>
               <nav className="flex flex-col space-y-2">
-                <Link to="/new-arrivals" className="py-2 text-sm font-medium hover:text-primary transition-colors">New Arrivals</Link>
+                <Link to="/new-arrivals" className="py-2 text-sm font-medium hover:text-primary transition-colors tracking-wider">N e w   A r r i v a l s</Link>
                 <Link to="/categories" className="py-2 text-sm font-medium hover:text-primary transition-colors">Categories</Link>
                 <Link to="/brands" className="py-2 text-sm font-medium hover:text-primary transition-colors">Brands</Link>
                 <Link to="/sale" className="py-2 text-sm font-medium hover:text-primary transition-colors">Sale</Link>
