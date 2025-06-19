@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Search, ShoppingCart, User, Heart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -40,7 +41,7 @@ const Header = ({ cartItems, onCartClick, onThemeChange, currentTheme }: HeaderP
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">New Arrivals</a>
+            <Link to="/new-arrivals" className="text-sm font-medium hover:text-primary transition-colors">New Arrivals</Link>
             <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Categories</a>
             <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Brands</a>
             <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Sale</a>
@@ -130,7 +131,7 @@ const Header = ({ cartItems, onCartClick, onThemeChange, currentTheme }: HeaderP
                 />
               </div>
               <nav className="flex flex-col space-y-2">
-                <a href="#" className="py-2 text-sm font-medium hover:text-primary transition-colors">New Arrivals</a>
+                <Link to="/new-arrivals" className="py-2 text-sm font-medium hover:text-primary transition-colors">New Arrivals</Link>
                 <a href="#" className="py-2 text-sm font-medium hover:text-primary transition-colors">Categories</a>
                 <a href="#" className="py-2 text-sm font-medium hover:text-primary transition-colors">Brands</a>
                 <a href="#" className="py-2 text-sm font-medium hover:text-primary transition-colors">Sale</a>
