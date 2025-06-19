@@ -12,6 +12,7 @@ interface Product {
   rating: number;
   reviews: number;
   category: string;
+  brand: string;
   isNew?: boolean;
   isSale?: boolean;
   sustainabilityScore?: number;
@@ -21,9 +22,10 @@ interface ProductCardProps {
   product: Product;
   onAddToCart: (product: Product) => void;
   onQuickView: (product: Product) => void;
+  viewMode?: "grid" | "list";
 }
 
-const ProductCard = ({ product, onAddToCart, onQuickView }: ProductCardProps) => {
+const ProductCard = ({ product, onAddToCart, onQuickView, viewMode = "grid" }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
 
