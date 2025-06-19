@@ -204,29 +204,89 @@ const CustomerDashboard = () => {
         <TabsContent value="analytics" className="space-y-6 mt-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card>
-              <CardHeader>
-                <CardTitle>Shopping Frequency</CardTitle>
-                <CardDescription>How often you make purchases</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span>Weekly Average</span>
-                    <span className="font-semibold">1.2 orders</span>
+              <CardHeader className="pb-4">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <CardTitle className="text-2xl font-light tracking-wider text-right">
+                      SALES
+                      <br />
+                      PERFORMANCE
+                    </CardTitle>
+                    <CardDescription className="text-right mt-2">
+                      Revenue measured by USD - Monthly tracking
+                    </CardDescription>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span>Monthly Average</span>
-                    <span className="font-semibold">5.1 orders</span>
+                  <button className="text-xs text-muted-foreground border rounded px-3 py-1 hover:bg-accent">
+                    Download the data ↓
+                  </button>
+                </div>
+                
+                {/* Filter Options */}
+                <div className="space-y-3">
+                  <div>
+                    <span className="text-sm font-medium mb-2 block">Filter by</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span>Peak Shopping Day</span>
-                    <span className="font-semibold">Sunday</span>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="text-xs text-muted-foreground mr-4">Type</span>
+                    <Badge variant="outline" className="bg-primary text-primary-foreground">All</Badge>
+                    <Badge variant="outline">Products</Badge>
+                    <Badge variant="outline">Services</Badge>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span>Preferred Time</span>
-                    <span className="font-semibold">Evening</span>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="text-xs text-muted-foreground mr-2">Status</span>
+                    <Badge variant="outline" className="bg-primary text-primary-foreground">Complete</Badge>
+                    <Badge variant="outline">Pending</Badge>
                   </div>
                 </div>
+
+                {/* Legend */}
+                <div className="mt-4 space-y-1">
+                  <div className="text-xs">
+                    <span className="font-medium">Key</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <div className="w-4 h-0.5 border-t-2 border-dashed border-gray-400"></div>
+                    <span>$15k - Target 2024</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <div className="w-4 h-0.5 bg-gray-600"></div>
+                    <span>$12k - Target 2023</span>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={[
+                    { month: "Jan", sales: 14.9, target2024: 15, target2023: 12 },
+                    { month: "Feb", sales: 8.2, target2024: 15, target2023: 12 },
+                    { month: "Mar", sales: 18.5, target2024: 15, target2023: 12 },
+                    { month: "Apr", sales: 11.7, target2024: 15, target2023: 12 },
+                    { month: "May", sales: 16.3, target2024: 15, target2023: 12 },
+                    { month: "Jun", sales: 9.8, target2024: 15, target2023: 12 },
+                    { month: "Jul", sales: 22.1, target2024: 15, target2023: 12 },
+                    { month: "Aug", sales: 19.4, target2024: 15, target2023: 12 },
+                    { month: "Sep", sales: 13.6, target2024: 15, target2023: 12 },
+                    { month: "Oct", sales: 17.8, target2024: 15, target2023: 12 },
+                    { month: "Nov", sales: 20.2, target2024: 15, target2023: 12 },
+                    { month: "Dec", sales: 24.7, target2024: 15, target2023: 12 }
+                  ]}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                    <XAxis dataKey="month" tick={{ fontSize: 12 }} />
+                    <YAxis 
+                      tick={{ fontSize: 12 }}
+                      label={{ value: 'Sales (k$)', angle: -90, position: 'insideLeft' }}
+                    />
+                    <Tooltip 
+                      formatter={(value) => [`$${value}k`, 'Sales']}
+                      contentStyle={{
+                        backgroundColor: 'hsl(var(--background))',
+                        border: '1px solid hsl(var(--border))',
+                        borderRadius: '6px'
+                      }}
+                    />
+                    <Bar dataKey="sales" fill="hsl(var(--primary))" />
+                  </BarChart>
+                </ResponsiveContainer>
               </CardContent>
             </Card>
 

@@ -37,18 +37,26 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
-      <div className="text-center mb-8">
-        <div className="text-8xl md:text-9xl font-bold text-white mb-8 font-mono tracking-wider">
-          {progress.toString().padStart(3, '0')}
+    <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+      {/* Percentage in bottom left */}
+      <div className="absolute bottom-8 left-8 text-white text-xl font-mono">
+        {progress.toString().padStart(3, '0')}%
+      </div>
+      
+      {/* Central loading box */}
+      <div className="relative w-64 h-32 perspective-1000">
+        <div 
+          className="w-full h-full bg-gradient-to-r from-gray-300 to-gray-500 relative overflow-hidden"
+          style={{
+            clipPath: `inset(0 ${100 - progress}% 0 0)`
+          }}
+        >
+          {/* Loading fill effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white to-gray-200 opacity-90" />
         </div>
         
-        <div className="w-80 md:w-96 h-2 bg-gray-800 rounded-full mx-auto">
-          <div 
-            className="h-full bg-white rounded-full transition-all duration-100 ease-out"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+        {/* Box outline */}
+        <div className="absolute inset-0 border-2 border-gray-400" />
       </div>
     </div>
   );
@@ -57,54 +65,26 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 const LogoAnimation = () => {
   return (
     <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
-      <div className="relative w-64 h-64">
-        {/* Animated geometric shapes forming logo */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative">
-            {/* First shape - vertical rectangle */}
-            <div 
-              className="absolute bg-gradient-to-b from-white to-gray-300 transform transition-all duration-1000 ease-out"
-              style={{
-                width: '40px',
-                height: '120px',
-                top: '-60px',
-                left: '-20px',
-                opacity: 0,
-                animation: 'fadeInSlide 1s ease-out 0.5s forwards'
-              }}
-            />
-            
-            {/* Second shape - horizontal rectangle */}
-            <div 
-              className="absolute bg-gradient-to-r from-gray-300 to-gray-500 transform transition-all duration-1000 ease-out"
-              style={{
-                width: '80px',
-                height: '40px',
-                top: '20px',
-                left: '20px',
-                opacity: 0,
-                animation: 'fadeInSlide 1s ease-out 1s forwards'
-              }}
-            />
-
-            {/* Third shape - diagonal accent */}
-            <div 
-              className="absolute bg-gradient-to-br from-purple-500 to-pink-500 transform transition-all duration-1000 ease-out rotate-45"
-              style={{
-                width: '20px',
-                height: '60px',
-                top: '-10px',
-                left: '40px',
-                opacity: 0,
-                animation: 'fadeInSlide 1s ease-out 1.5s forwards'
-              }}
-            />
-          </div>
+      <div className="relative w-64 h-32 perspective-1000">
+        {/* Left half - folds 90 degrees */}
+        <div 
+          className="absolute left-0 top-0 w-32 h-32 bg-gradient-to-r from-gray-300 to-gray-400 origin-right"
+          style={{
+            transformStyle: 'preserve-3d',
+            animation: 'foldLeft 1s ease-out forwards'
+          }}
+        />
+        
+        {/* Right half - stays in place */}
+        <div className="absolute right-0 top-0 w-32 h-32 bg-gradient-to-r from-gray-400 to-gray-500" />
+        
+        {/* Box outline */}
+        <div className="absolute inset-0 border-2 border-gray-400" />
+        
+        {/* Completion indicator */}
+        <div className="absolute bottom-8 left-8 text-white text-xl font-mono">
+          100%
         </div>
-
-        {/* Pulsing glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" 
-             style={{ animationDelay: '2s' }} />
       </div>
     </div>
   );
