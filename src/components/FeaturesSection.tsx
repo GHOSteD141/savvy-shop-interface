@@ -59,8 +59,8 @@ const FeaturesSection = () => {
       <div className="container mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white text-sm font-bold mb-6 animate-neon">
-            <Sparkles className="h-5 w-5 mr-2 animate-spin" />
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white text-sm font-bold mb-6">
+            <Sparkles className="h-5 w-5 mr-2" />
             🔥 REVOLUTIONARY FEATURES
           </div>
           
@@ -116,7 +116,7 @@ const FeaturesSection = () => {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="px-12 py-8 text-2xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 hover:from-pink-600 hover:via-purple-600 hover:to-cyan-600 transform hover:scale-110 transition-all duration-300 rounded-2xl shadow-2xl shadow-purple-500/50 animate-rainbow"
+            className="px-12 py-8 text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 rounded-2xl shadow-2xl shadow-purple-500/50"
           >
             🎉 Experience the Magic
           </Button>

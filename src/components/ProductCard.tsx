@@ -113,7 +113,7 @@ const ProductCard = ({ product, onAddToCart, onQuickView }: ProductCardProps) =>
                 key={i}
                 className={`h-5 w-5 transition-all duration-200 ${
                   i < Math.floor(product.rating)
-                    ? 'fill-yellow-400 text-yellow-400 animate-pulse'
+                    ? 'fill-yellow-400 text-yellow-400'
                     : 'text-gray-600'
                 }`}
               />

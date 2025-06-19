@@ -29,9 +29,9 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <div className="mb-6 flex justify-center">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white text-sm font-medium animate-pulse">
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white text-sm font-medium">
             <Sparkles className="h-4 w-4 mr-2" />
-            🚀 HACKATHON SPECIAL
+            🚀 NEXT-GEN PLATFORM
           </div>
         </div>
         
