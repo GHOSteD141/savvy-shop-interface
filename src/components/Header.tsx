@@ -42,9 +42,9 @@ const Header = ({ cartItems, onCartClick, onThemeChange, currentTheme }: HeaderP
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/new-arrivals" className="text-sm font-medium hover:text-primary transition-colors">New Arrivals</Link>
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Categories</a>
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Brands</a>
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Sale</a>
+            <Link to="/categories" className="text-sm font-medium hover:text-primary transition-colors">Categories</Link>
+            <Link to="/brands" className="text-sm font-medium hover:text-primary transition-colors">Brands</Link>
+            <Link to="/sale" className="text-sm font-medium hover:text-primary transition-colors">Sale</Link>
           </nav>
 
           {/* Search Bar */}
@@ -132,9 +132,9 @@ const Header = ({ cartItems, onCartClick, onThemeChange, currentTheme }: HeaderP
               </div>
               <nav className="flex flex-col space-y-2">
                 <Link to="/new-arrivals" className="py-2 text-sm font-medium hover:text-primary transition-colors">New Arrivals</Link>
-                <a href="#" className="py-2 text-sm font-medium hover:text-primary transition-colors">Categories</a>
-                <a href="#" className="py-2 text-sm font-medium hover:text-primary transition-colors">Brands</a>
-                <a href="#" className="py-2 text-sm font-medium hover:text-primary transition-colors">Sale</a>
+                <Link to="/categories" className="py-2 text-sm font-medium hover:text-primary transition-colors">Categories</Link>
+                <Link to="/brands" className="py-2 text-sm font-medium hover:text-primary transition-colors">Brands</Link>
+                <Link to="/sale" className="py-2 text-sm font-medium hover:text-primary transition-colors">Sale</Link>
               </nav>
             </div>
           </div>
