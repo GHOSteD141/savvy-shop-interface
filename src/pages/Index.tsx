@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import FeaturesSection from "@/components/FeaturesSection";
+import StatsSection from "@/components/StatsSection";
 import ProductGrid from "@/components/ProductGrid";
 import PersonalizedRecommendations from "@/components/PersonalizedRecommendations";
 import ShoppingCart from "@/components/ShoppingCart";
@@ -143,6 +145,8 @@ const Index = () => {
       
       <main>
         <HeroSection />
+        <FeaturesSection />
+        <StatsSection />
         <ProductGrid
           onAddToCart={handleAddToCart}
           onQuickView={handleQuickView}
