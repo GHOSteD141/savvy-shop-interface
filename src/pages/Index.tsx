@@ -9,6 +9,7 @@ import ShoppingCart from "@/components/ShoppingCart";
 import CustomerDashboard from "@/components/CustomerDashboard";
 import Footer from "@/components/Footer";
 import BrandKitSelector from "@/components/BrandKitSelector";
+import LoadingScreen from "@/components/LoadingScreen";
 
 interface CartItem {
   id: string;
@@ -39,6 +40,8 @@ const Index = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [currentTheme, setCurrentTheme] = useState("default");
   const [showDashboard, setShowDashboard] = useState(false);
+  const [showLoading, setShowLoading] = useState(true);
+  const [showMainContent, setShowMainContent] = useState(false);
 
   // Theme configurations
   const themes = {
@@ -111,6 +114,15 @@ const Index = () => {
     console.log("Quick view:", product);
   };
 
+  const handleLoadingComplete = () => {
+    setShowLoading(false);
+    setTimeout(() => setShowMainContent(true), 100);
+  };
+
+  if (showLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
+
   if (showDashboard) {
     return (
       <div className="min-h-screen bg-background">
@@ -136,7 +148,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen bg-background ${showMainContent ? 'animate-scale-in' : 'opacity-0'} transition-all duration-1000`}>
       <Header
         cartItems={cartItems.length}
         onCartClick={() => setIsCartOpen(true)}
