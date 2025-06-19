@@ -148,10 +148,12 @@ const Index = () => {
         <HeroSection />
         <FeaturesSection />
         <StatsSection />
-        <ProductGrid
-          onAddToCart={handleAddToCart}
-          onQuickView={handleQuickView}
-        />
+        <div id="products">
+          <ProductGrid
+            onAddToCart={handleAddToCart}
+            onQuickView={handleQuickView}
+          />
+        </div>
         <PersonalizedRecommendations
           onAddToCart={handleAddToCart}
           onQuickView={handleQuickView}

@@ -35,7 +35,7 @@ const Header = ({ cartItems, onCartClick, onThemeChange, currentTheme }: HeaderP
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-              LuxeStore
+              shopz
             </h1>
           </div>
 

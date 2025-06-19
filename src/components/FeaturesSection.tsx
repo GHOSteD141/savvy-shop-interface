@@ -101,12 +101,6 @@ const FeaturesSection = () => {
                   {feature.description}
                 </p>
                 
-                <Button 
-                  variant="ghost" 
-                  className="mt-4 text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
-                >
-                  Explore →
-                </Button>
               </div>
             </div>
           ))}
@@ -117,6 +111,7 @@ const FeaturesSection = () => {
           <Button 
             size="lg" 
             className="px-12 py-8 text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 rounded-2xl shadow-2xl shadow-purple-500/50"
+            onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
           >
             🎉 Experience the Magic
           </Button>

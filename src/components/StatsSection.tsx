@@ -124,7 +124,7 @@ const StatsSection = () => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-2xl text-white text-lg font-bold animate-rainbow hover:scale-105 transition-transform duration-300 cursor-pointer">
+          <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 rounded-2xl text-white text-lg font-bold animate-rainbow hover:scale-105 transition-transform duration-300 cursor-pointer" onClick={() => window.location.href = '/new-arrivals'}>
             🚀 Join the AI Revolution
           </div>
         </div>

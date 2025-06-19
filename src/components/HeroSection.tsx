@@ -49,12 +49,9 @@ const HeroSection = () => {
           ⚡ Real-time personalization that reads your mind
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-          <Button size="lg" className="px-10 py-8 text-xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transform hover:scale-110 transition-all duration-300 rounded-2xl shadow-2xl shadow-purple-500/50">
+        <div className="flex justify-center mb-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <Button size="lg" className="px-10 py-8 text-xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 transform hover:scale-110 transition-all duration-300 rounded-2xl shadow-2xl shadow-purple-500/50" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>
             🚀 Launch Shopping
-          </Button>
-          <Button variant="outline" size="lg" className="px-10 py-8 text-xl font-bold border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transform hover:scale-110 transition-all duration-300 rounded-2xl">
-            🎯 Explore AI Magic
           </Button>
         </div>
 
