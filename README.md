@@ -50,6 +50,34 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## How to Run the Project Locally
+
+1. Clone this repo:
+
+   ```bash
+   git clone https://github.com/your-username/savvy-shop-interface.git
+   cd savvy-shop-interface
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## AI Tools Used
+
+- **Lovable Notebook LM**: For generating and managing notebook content.
+- **GitHub Copilot**: Helped with code suggestions and completions.
+
 ## What technologies are used for this project?
 
 This project is built with:
@@ -60,14 +88,3 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/5e3953ba-a77b-467e-8639-823802f08221) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
