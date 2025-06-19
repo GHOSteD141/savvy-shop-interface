@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Heart, ShoppingCart, Star, Eye, Leaf } from "lucide-react";
+import { Heart, ShoppingCart, Star, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -12,7 +12,6 @@ interface Product {
   rating: number;
   reviews: number;
   category: string;
-  brand: string;
   isNew?: boolean;
   isSale?: boolean;
   sustainabilityScore?: number;
@@ -22,83 +21,10 @@ interface ProductCardProps {
   product: Product;
   onAddToCart: (product: Product) => void;
   onQuickView: (product: Product) => void;
-  viewMode?: "grid" | "list";
 }
 
-const ProductCard = ({ product, onAddToCart, onQuickView, viewMode = "grid" }: ProductCardProps) => {
+const ProductCard = ({ product, onAddToCart, onQuickView }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
-
-  if (viewMode === "list") {
-    return (
-      <div className="flex items-center gap-6 p-6 bg-card rounded-xl border border-border/50 hover:border-purple-400/50 transition-all duration-300 hover:shadow-lg">
-        <div className="w-32 h-32 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden flex-shrink-0">
-          <img 
-            src={product.image} 
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        
-        <div className="flex-1 min-w-0">
-          <div className="flex items-start justify-between mb-2">
-            <div>
-              <h3 className="font-semibold text-lg truncate">{product.name}</h3>
-              <p className="text-sm text-muted-foreground">{product.brand}</p>
-            </div>
-            {product.isNew && (
-              <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
-                NEW
-              </Badge>
-            )}
-          </div>
-          
-          <div className="flex items-center gap-2 mb-3">
-            <div className="flex">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-4 w-4 ${
-                    i < Math.floor(product.rating)
-                      ? 'fill-yellow-400 text-yellow-400'
-                      : 'text-gray-600'
-                  }`}
-                />
-              ))}
-            </div>
-            <span className="text-sm text-muted-foreground">({product.reviews})</span>
-            {product.sustainabilityScore && (
-              <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
-                <Leaf className="h-3 w-3 mr-1" />
-                {product.sustainabilityScore}% sustainable
-              </Badge>
-            )}
-          </div>
-          
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold">${product.price}</span>
-              {product.originalPrice && (
-                <span className="text-lg text-muted-foreground line-through">
-                  ${product.originalPrice}
-                </span>
-              )}
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" onClick={() => onQuickView(product)}>
-                <Eye className="h-4 w-4 mr-2" />
-                Quick View
-              </Button>
-              <Button onClick={() => onAddToCart(product)} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
-                <ShoppingCart className="h-4 w-4 mr-2" />
-                Add to Cart
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
   const [isFavorited, setIsFavorited] = useState(false);
 
   return (
